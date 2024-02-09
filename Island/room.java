@@ -55,6 +55,22 @@ public class room{
     public void setType(String t){
         type = t;
     }
+    public String toString(){
+        String p = "The room has: " + tenants + "tenants, ";
+        if(ac == false){
+            p = p + "has no ac, ";
+        } else{
+            p = p + "has ac";
+        }
+        if(heating == false){
+            p = p + "has no heating, ";
+        } else{
+            p = p + "has heating, ";
+        }
+        p = p + "it is priced at: " + price + ", and is a: " + type;
+        return p;
+
+    }
     public boolean isEmpty(){
         if(tenants == 0){
             return true;
