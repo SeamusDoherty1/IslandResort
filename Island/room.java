@@ -67,7 +67,7 @@ public class room{
         } else{
             p = p + "has heating, ";
         }
-        p = p + "it is priced at: " + price + ", and is a: " + type;
+        p = p + "it is priced at: " + price + ", and is a: " + type + "\n";
         return p;
 
     }

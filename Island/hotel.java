@@ -12,7 +12,7 @@ public class hotel {
         rooms = new ArrayList<room>(); 
         employees = 0;
     }
-    public hotel(room r, int n, int e){
+    public hotel(room r, int e){
         rooms = new ArrayList<room>();
         rooms.add(r);
         employees = e;
@@ -23,19 +23,62 @@ public class hotel {
         }
     }
     public double getProfit(){
+        for(room v: rooms){
+            profits += v.getPrice();
+        }
         return profits;
     }
     public int getNumRooms(){
-        return numRoom;
+        return rooms.size();
     }
     public int getEmployees(){
         return employees;
     }
-    public int residents(){
+    public int getResidents(){
+        for(room v: rooms){
+            residents += v.getTenants();
+        }
         return residents;
     }
     public void addRoom(room r){
         rooms.add(r);
     }
-    public void setRoom
+    public void setProfit(int price){
+        for(room v: rooms){
+            v.setPrice((v.getPrice() + price));
+        }
+    }
+    public void removeRoom(int index){
+        rooms.remove(index);
+    }
+    public void setEmployees(int e){
+        employees += e;
+    }
+    public double getSmallestPrice(){
+        double min = rooms.get(0).getPrice();
+        for(int i = 0; i < rooms.size(); i++){
+            if(rooms.get(i).getPrice() < min){
+                min = rooms.get(i).getPrice();
+            }
+        }
+        return min;
+
+    }
+    public double avgPrice(){
+        double sum = 0;
+        for(room v: rooms){
+            sum += v.getPrice();
+        }
+        sum = sum/ getNumRooms();
+        return sum;
+    }
+    public String toString(){
+        String s = "This hotel has a profit of: " + profits + "\n Has " + employees + " employees\n and has" + residents + " residents.\n Each room has:";
+        for(room v: rooms){
+            s = s + v.toString();
+        }
+        return s;
+
+    }
+
 }
