@@ -56,16 +56,16 @@ public class room{
         type = t;
     }
     public String toString(){
-        String p = "The room has: " + tenants + "tenants, ";
+        String p = "The room has: " + tenants + " tenants, ";
         if(ac == false){
-            p = p + "has no ac, ";
+            p = p + " has no ac, ";
         } else{
-            p = p + "has ac";
+            p = p + " has ac";
         }
         if(heating == false){
-            p = p + "has no heating, ";
+            p = p + " has no heating, ";
         } else{
-            p = p + "has heating, ";
+            p = p + " has heating, ";
         }
         p = p + "it is priced at: " + price + ", and is a: " + type + "\n";
         return p;

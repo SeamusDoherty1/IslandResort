@@ -9,7 +9,9 @@ public class hotel {
     private int residents;
 
     public hotel(){
+        room r = new room();
         rooms = new ArrayList<room>(); 
+        rooms.add(r);
         employees = 0;
     }
     public hotel(room r, int e){
@@ -72,10 +74,10 @@ public class hotel {
         sum = sum/ getNumRooms();
         return sum;
     }
-    public String toString(){
-        String s = "This hotel has a profit of: " + profits + "\n Has " + employees + " employees\n and has" + residents + " residents.\n Each room has:";
-        for(room v: rooms){
-            s = s + v.toString();
+    public String tooString(){
+        String s = "This hotel has a profit of: " + profits + "\n Has " + employees + " employees\n and has " + residents + " residents.\n Each room has:";
+        for(room r: rooms){
+            s = s + r.toString();
         }
         return s;
 
