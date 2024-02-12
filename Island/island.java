@@ -94,6 +94,9 @@ public class island{
         
         i1.addHotel(h2);
         i2.addHotel(h1);
+        System.out.println(i2.hotelHasSameEmployees() + " " + i2.getRooms());
+        System.out.println(i1.toooString());
+        System.out.println(i2.toooString());
 
 
         //System.out.println(r2.toString());
